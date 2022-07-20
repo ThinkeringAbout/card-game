@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gamefield {
+  width: 700px;
+  height: 500px;
+  border: 2px solid black;
+  background: linear-gradient(#00717c, #55ffee);
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.game-card {
+  width: 75px;
+  height: 105px;
+  margin: 4px;
+}
+
+.game-card .kot {
+  display: none;
+}
+
+img {
+  width: 75px;
+  height: 105px;
+}
+
+.gameEnd {
+  visibility: hidden;
+}
