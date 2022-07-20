@@ -11,6 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .gamefield {
@@ -28,6 +29,8 @@ body {
   width: 75px;
   height: 105px;
   margin: 4px;
+  border-radius: 13px;
+  overflow: hidden;
 }
 
 .game-card .kot {
@@ -41,4 +44,8 @@ img {
 
 .gameEnd {
   visibility: hidden;
+}
+
+h1 {
+  margin: 10px;
 }

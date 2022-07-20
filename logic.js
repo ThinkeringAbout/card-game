@@ -1,5 +1,6 @@
 let gamecards = document.querySelectorAll('.game-card');
 let gameEnd = document.querySelector('.gameEnd');
+let gametxt = document.querySelector('.gametxt');
 
 gamecards.forEach(gamecard => gamecard.onclick = cardClicked);
 
@@ -8,6 +9,7 @@ let firstSrc;
 let secondSrc;
 let firstId;
 let secondId;
+let scores = 0;
 
 async function cardClicked() {
   // console.log(this.id);
@@ -24,11 +26,12 @@ async function cardClicked() {
     secondSrc = kot.src;
     secondId = this.id;
   }
-  if (firstSrc !== undefined && secondSrc !== undefined) {
+  if (firstSrc !== undefined && secondSrc !== undefined && firstId != secondId) {
     if (firstSrc == secondSrc) {
       console.log("OK");
       firstSrc = undefined;
       secondSrc = undefined;
+      scores++;
     } else {
       console.log("NO");
       firstSrc = undefined;
@@ -41,6 +44,9 @@ async function cardClicked() {
     }
     firstSrc = undefined;
     secondSrc = undefined;
+  }
+  if (scores >= 12) {
+    gametxt.innerText = "You win";
   }
   gamecards.forEach(gamecard => gamecard.onclick = cardClicked);
 }
