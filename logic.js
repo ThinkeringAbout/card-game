@@ -2,6 +2,16 @@ let gamecards = document.querySelectorAll('.game-card');
 let gameEnd = document.querySelector('.gameEnd');
 let gametxt = document.querySelector('.gametxt');
 
+let array = [];
+for (let i = 0; i < gamecards.length; i++) {
+  array.push(gamecards[i].querySelector('.kot').src);
+}
+const shuffledArray = array.sort(() => Math.random() - 0.5);
+
+for (let i = 0; i < gamecards.length; i++) {
+  gamecards[i].querySelector('.kot').src = shuffledArray[i];
+}
+
 gamecards.forEach(gamecard => gamecard.onclick = cardClicked);
 
 
